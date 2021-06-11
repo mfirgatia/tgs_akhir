@@ -5,8 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.ui.materi.MateriFragment"
-    android:background="#A2BCE8" >
+    android:background="#FF5722"
+    tools:context=".ui.ui.materi.MateriFragment">
 
     <ScrollView
         android:layout_width="0dp"
@@ -44,8 +44,11 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:text="Materi Untuk Anda"
+        android:background="#ffff"
         android:textSize="24sp"
+        android:textColor="#000"
         android:textStyle="bold"
+        android:fontFamily="serif"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

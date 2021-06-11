@@ -1,5 +1,6 @@
 package org.aplas.myapplication.ui.ui.materi;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -21,11 +22,18 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class MateriFragment extends Fragment {
 
     ApiInterface apiInterface;
     private RecyclerView recyclerView;
     private AdapterMateri adapter;
+
+    SharedPreferences sharedPreferences;
+    private static final String SHARE = "KEY_SHARE";
+    private static final String ID_KLS = "KEY_ID_KLS";
+    private static final String ID_JRS = "KEY_ID_JRS";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -42,7 +50,11 @@ public class MateriFragment extends Fragment {
     }
 
     private void refresh() {
-        Call<Materi> materiCall = apiInterface.getMateri();
+        sharedPreferences = getActivity().getSharedPreferences(SHARE, MODE_PRIVATE);
+        String kls = sharedPreferences.getString(ID_KLS, "");
+        String jrs = sharedPreferences.getString(ID_JRS, "");
+
+        Call<Materi> materiCall = apiInterface.getMateri(kls, jrs);
         materiCall.enqueue(new Callback<Materi>() {
             @Override
             public void onResponse(Call<Materi> call, Response<Materi> response) {
