@@ -36,6 +36,8 @@ public class BankSoalFragment extends Fragment {
     private static final String ID_KLS = "KEY_ID_KLS";
     private static final String ID_JRS = "KEY_ID_JRS";
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -49,6 +51,7 @@ public class BankSoalFragment extends Fragment {
 
         return view;
     }
+
 
     private void refresh() {
         sharedPreferences = getActivity().getSharedPreferences(SHARE, MODE_PRIVATE);
