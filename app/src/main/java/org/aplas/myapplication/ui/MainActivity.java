@@ -83,7 +83,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void logout(MenuItem item) {
-
         sharedPreferences = getSharedPreferences(SHARE, MODE_PRIVATE);
 
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -96,5 +95,15 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(i);
         finish();
+    }
+
+    public void profile(MenuItem item) {
+        Intent i = new Intent(MainActivity.this, ProfileActivity.class);
+        startActivity(i);
+    }
+
+    public void pp(View view) {
+        Intent i = new Intent(MainActivity.this, ProfileActivity.class);
+        startActivity(i);
     }
 }

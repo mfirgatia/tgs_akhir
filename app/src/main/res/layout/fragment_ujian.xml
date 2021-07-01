@@ -22,7 +22,7 @@
     </ScrollView>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_bankSoal"
+        android:id="@+id/rv_ujian"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
